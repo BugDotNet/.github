@@ -73,15 +73,15 @@ available on their own, and as part of the Bug.NET
 
 If you've ran into a problem with one of our projects *(or our organisation in
 general)*, then please take a look at our
-[support guide](../.github/support.md) to learn about the best way to get help
-with your issue.
+[support guide](https://github.com/BugDotNet/.github/blob/main/.github/support.md)
+to learn about the best way to get help with your issue.
 
 
 ## Contributing
 
 There are many different ways in which you can contribute and help the Bug.NET
 project, if you'd like to learn more then take a look at our
-[contributing guide](../.github/contributing.md).
+[contributing guide](https://github.com/BugDotNet/.github/blob/main/.github/contributing.md).
 
 
 ## Governance
@@ -90,13 +90,15 @@ project, if you'd like to learn more then take a look at our
 "[benevolent dictator for life](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life)",
 meaning that they will have the final say about all project decisions and
 disputes. If you'd like to learn more then please read our
-[governance](../.github/governance.md) document.
+[governance](https://github.com/BugDotNet/.github/blob/main/.github/governance.md)
+document.
 
 
 ## Code of conduct
 
 Everyone participating in the Bug.NET projects, or in our community must follow
-our [code of conduct](../.github/code_of_conduct.md).
+our
+[code of conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md).
 
 
 ## Socials
