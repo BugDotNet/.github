@@ -23,6 +23,10 @@ editors, not just the ones meant to be used for .NET)*.
   [Repository](https://github.com/BugDotNet/dap) |
   *Project is shared with the debugger above*.
 
+If you'd like to get an overview of the issues/tasks/bugs/research/etc. for
+these projects, then take a look at our
+[overview project](https://github.com/orgs/BugDotNet/projects/3).
+
 
 ## Roadmap
 
