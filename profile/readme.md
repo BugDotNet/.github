@@ -15,7 +15,7 @@ editors, not just the ones meant to be used for .NET)*.
 - A Bug.NET command line utility which will serve as an *(optional)* entry
   point for invoking all of the other Bug.NET tools.
   [Repository](https://github.com/BugDotNet/cli) |
-  [Project](https://github.com/orgs/BugDotNet/projects/3).
+  [Project](https://github.com/orgs/BugDotNet/projects/4).
 - A .NET debugger written in C#.
   [Repository](https://github.com/BugDotNet/debugger) |
   [Project](https://github.com/orgs/BugDotNet/projects/2).
