@@ -1,0 +1,66 @@
+name: Detailed bug report
+description: Report a bug in the project that you have investigated and can provide more detailed information about.
+title: "[Bug report]: "
+
+projects: ["BugDotNet/3"]
+type: "Bug report"
+
+body:
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: Read and agreed to follow our Code of Conduct?
+      description: |
+        Have you read our [Code of Conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md) and do you agree to follow it?
+        **Please make sure you actually read it, as it contains many helpful tips for effective communication.**
+      options:
+        - label: I have read the Code of Conduct and I agree to follow it.
+          required: true
+
+  - type: checkboxes
+    id: existing-bug-reports
+    attributes:
+      label: Checked the existing bug reports?
+      description: "Have you checked the existing bug reports to see if your issue has already been reported?"
+      options:
+        - label: I have checked the existing bug reports to see if my issue has already been reported.
+          required: true
+
+
+
+  - type: input
+    id: affected-areas
+    attributes:
+      label: Affected areas
+      description: "If you know, then please provide the areas of the project that the issue you're reporting affects."
+
+  - type: input
+    id: affected-versions
+    attributes:
+      label: Affected versions
+      description: "If you know, then please provide the relevant verisons of the project that are *(or might be)* affected by this project."
+
+  - type: input
+    id: potential-cause
+    attributes:
+      label: Potential causes
+      description: "If you know, then please provide what commit/change/pull request/etc has caused the problem that you're reporting, whether caused by us, or by a dependency."
+
+  - type: textarea
+    id: description
+    attributes:
+      label: The problem
+      description: "Please describe the issue that you have noticed and would like to report."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: "If you know, then please provide the exact steps that can be taken to reproduce the issue that you're reporting."
+
+
+  - type: markdown
+    attributes:
+      value: "Thank you for taking the time to investigate and fill out a bug report."

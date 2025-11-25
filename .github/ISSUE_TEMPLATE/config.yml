@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community discussions
+    url: https://github.com/orgs/BugDotNet/discussions?discussions_q=
+    about: "Use the GitHub discussions feature to: talk about new feature ideas; ask/answer questions; provide feedback; and more."
