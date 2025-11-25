@@ -44,8 +44,8 @@ meaning that it is project agnostic.
 
 If you have some ideas on how we could improve one of our projects, or how we
 could document/organise things better, then please bring it up over at the
-[idea discussion area](https://github.com/orgs/BugDotNet/discussions/categories/ideas?discussions_q=) *(after checking if someone else has already brought up
-this idea).*
+[idea discussion area](https://github.com/orgs/BugDotNet/discussions/categories/ideas?discussions_q=)
+*(after checking if someone else has already brought up this idea).*
 
 If something has annoyed you, but you're not sure how we could improve it, then
 please leave some feedback for us over at the

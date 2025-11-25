@@ -10,8 +10,9 @@ Everything in this guide is **in addition** to
 
 This code of conduct must be followed by anyone contributing to the Bug.NET
 projects, or interacting with our community. **This includes all of the
-[maintainers](./governance.md#maintainers)**. If you see something you think is
-harmful then please mention or report it - depending on the severity.
+[maintainers](https://github.com/BugDotNet/.github/blob/main/.github/governance.md#maintainers)**.
+If you see something you think is harmful then please mention or report it -
+depending on the severity.
 
 
 ## Communication
@@ -142,8 +143,8 @@ we're communicating, and when we're waiting for an answer.
 ## Exceptions
 
 Even though patience should be shown, the
-[moderators](./governance.md#moderators) reserve the right to deal with any
-obvious trolls or harmful participants.
+[moderators](https://github.com/BugDotNet/.github/blob/main/.github/governance.md#moderators)
+reserve the right to deal with any obvious trolls or harmful participants.
 
 
 ## Updates

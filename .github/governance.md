@@ -53,7 +53,7 @@ The term "maintainers" is a catch-all phrase that's used to refer to the
 [project](#project-members) members.
 
 Everyone participating and interacting with the Bug.NET projects and the Bug.NET
-community must follow our [code of conduct](./code_of_conduct.md).
+community must follow our [code of conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md).
 **This includes all of the maintainers.** As such please don't be afraid to
 bring it up if you think a maintainer is conducting themselves inappropriately,
 even if it's the [BDFL](#benevolent-dictator-for-life).
@@ -70,10 +70,11 @@ projects or through the Bug.NET community.
 
 A contributor is anyone that helps out with the Bug.NET projects, or with the
 community, whether that's through
-[submitting code](./contributing.md#code-contributions), or through
-[helping out with research](./contributing.md#research), or through any
-other way that's outlined in our
-[contributing guide](./contributing.md#ways-to-help-out).
+[submitting code](https://github.com/BugDotNet/.github/blob/main/.github/contributing.md#code-contributions),
+or
+[helping out with research](https://github.com/BugDotNet/.github/blob/main/.github/contributing.md#research),
+or through any other way that's outlined in our
+[contributing guide](https://github.com/BugDotNet/.github/blob/main/.github/contributing.md#ways-to-help-out).
 
 Regular contributors may eventually be invited to become maintainers, this
 will be decided by the [BDFL](#benevolent-dictator-for-life), but the other

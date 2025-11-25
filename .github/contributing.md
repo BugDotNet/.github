@@ -1,10 +1,11 @@
 # Contributing
 
 Unlike most OwlDomain projects, Bug.NET will be under an
-[MIT license](../license.md), and it will accept community contributions.
-However at this stage of the project, code contributions will not be accepted
-yet, but you can still help out in other ways, if you'd like to learn more about
-that then please continue reading this guide.
+[MIT license](https://github.com/BugDotNet/.github/blob/main/license.md),
+and it will accept community contributions. However at this stage of the
+project, code contributions will not be accepted yet, but you can still help out
+in other ways, if you'd like to learn more about that then please continue
+reading this guide.
 
 If you'd like to create a new issue, whether for a question, a bug report, or a
 feature request *(or anything else)*, then please read the
@@ -12,9 +13,10 @@ feature request *(or anything else)*, then please read the
 
 
 ***As always, when interacting with the Bug.NET community, please remember
-to adhere to our [code of conduct](./code_of_conduct.md), it is there to ensure
-that the Bug.NET community stays as a welcoming place, that focuses on the
-technology, and the project that it's responsible for.***
+to adhere to our
+[code of conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md),
+it is there to ensure that the Bug.NET community stays as a welcoming place,
+that focuses on the technology, and the project that it's responsible for.***
 
 
 ## Issues

@@ -52,7 +52,7 @@ that can actually rival the primary *proprietary* ones people are "forced" to
 use if they're even remotely serious about their projects.
 
 If you'd like to learn more about what drove us to this, then go ahead and read
-the full [rationale document](../rationale.md).
+the full [rationale document](https://github.com/BugDotNet/.github/blob/main/rationale.md).
 
 
 ## Goals
@@ -101,8 +101,7 @@ our [code of conduct](../.github/code_of_conduct.md).
 
 ## Socials
 
-[<img src="https://img.shields.io/disc
-ord/1411024983550853162?style=social&logo=discord&label=discord&link=https%3A%2F%2Fdiscord.gg%Eq2mKjcUw5" alt="OwlDomain Discord server badge">](https://discord.gg/Eq2mKjcUw5)
+[<img src="https://img.shields.io/discord/1411024983550853162?style=social&logo=discord&label=discord&link=https%3A%2F%2Fdiscord.gg%Eq2mKjcUw5" alt="OwlDomain Discord server badge">](https://discord.gg/Eq2mKjcUw5)
 
 ### Discussions
 
