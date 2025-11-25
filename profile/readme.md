@@ -69,6 +69,14 @@ available on their own, and as part of the Bug.NET
 [command line utility](https://github.com/BugDotNet/cli).
 
 
+## Support
+
+If you've ran into a problem with one of our projects *(or our organisation in
+general)*, then please take a look at our
+[support guide](../.github/support.md) to learn about the best way to get help
+with your issue.
+
+
 ## Contributing
 
 There are many different ways in which you can contribute and help the Bug.NET
