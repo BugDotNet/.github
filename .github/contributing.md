@@ -11,6 +11,12 @@ feature request *(or anything else)*, then please read the
 [issues section](#issues) *(the next section)* of this guide first.
 
 
+***As always, when interacting with the Bug.NET community, please remember
+to adhere to our [code of conduct](./code_of_conduct.md), it is there to ensure
+that the Bug.NET community stays as a welcoming place, that focuses on the
+technology, and the project that it's responsible for.***
+
+
 ## Issues
 
 If you want to report a bug, then first please look at the existing bug reports
@@ -85,6 +91,12 @@ Code contributions are not *currently* being accepted, this is because Bug.NET
 is still in its initial stages, and I still need to figure out exactly what I
 should do to legally protect it.
 
+However if you'd like to prepare for when code contributions will be accepted,
+then keep in mind that all commits made to Bug.NET will have to be
+[signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits),
+and any pull requests should target the `develop` branch of the project, instead
+of the `main` branch.
+
 ### Research
 
 Bug.NET contains a lot of different areas, and as such there is a lot of
@@ -111,7 +123,7 @@ area.
 
 Don't worry if you think someone is already doing the research that you've
 wanted to do, more research is always better, and you might even be able to find
-parts that they couldn't *(and vice versa)*. if you're pro-active about leaving
+parts that they couldn't *(and vice versa)*. if you're proactive about leaving
 updates *(in the discussion area)* about how your research is going, then you
 might even get a chance to communicate, join up, and research the topic as a
 team.
@@ -128,10 +140,17 @@ the different general editors that people like to use, and it would be very
 unlikely for us to support them all, not just because of the sheer amount of
 work that would be necessary, but because the best extensions and plugins come
 from understanding the workflows and preferences of the people using those
-editors, and as such, a copy paste extension made to "just work" would result in
-quite a lacklustre experience for the end developers.
+editors, and as such, a copy pasted extension made to "just work" would result
+in quite a lacklustre experience for the end developers.
 
 If you make use of Bug.NET in something that you have made, then please
 show it off at the
 [show and tell discussion](https://github.com/orgs/BugDotNet/discussions/categories/show-and-tell)
+area.
+
+
+## Updates
+
+Any significant changes to this guide will be mentioned in the
+[announcement discussion](https://github.com/orgs/BugDotNet/discussions/categories/announcements)
 area.

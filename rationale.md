@@ -75,9 +75,10 @@ has
 > When I have time to contribute, that is what I will be working towards. I
 > would love to think I will get there before .NET 10 is released.
 
-The goal of which has clearly failed *(as .NET has already released, and there
-doesn't seem to be obvious any updates about the milestone)*, not to blame them
-though, they seem to be quite busy judging by their GitHub contribution graph.
+The goal of which has clearly failed *(as .NET 10 has already released, and
+there doesn't seem to be obvious any updates about the milestone)*, not to blame
+them though, they seem to be quite busy judging by their GitHub contribution
+graph.
 
 #### Mono
 
@@ -120,7 +121,7 @@ created on the 1st of October, 2020.
 
 ### Visual Studio Code extension
 
-As my final point, I'd like to highlight the OmniSharp situation with it's
+As my final point, I'd like to highlight the OmniSharp situation with its
 Visual Studio Code extension, which originally, was an OmniSharp project that
 was available at
 [OmniSharp/omnisharp-vscode](https://github.com/OmniSharp/omnisharp-vscode),
@@ -163,7 +164,7 @@ it.
 
 ## The Roslyn LSP
 
-The [Roslyn](https://github.com/dotnet/roslyn) project does offer up it's own
+The [Roslyn](https://github.com/dotnet/roslyn) project does offer up its own
 [language server](https://github.com/dotnet/roslyn/tree/0dfbd76cfa24436cd456f6dbb73acd1dde4e363e/src/LanguageServer),
 however, once again, documentation does not seem to be a priority, and it's also
 *very* clearly meant for only being used with Visual Studio and the C# Dev Kit.
@@ -179,7 +180,8 @@ Well so did the person asking this
 >
 > After looking at the
 > [project file](https://github.com/dotnet/roslyn/blob/ff8e601c5471f627de2f0e12ef1f4d417200adcf/src/Features/LanguageServer/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer.csproj#L21)
-> I see that the project gets bundled as a NuGet package, but it's not published.
+> I see that the project gets bundled as a NuGet package, but it's not
+> published.
 >
 > How do I download the language server?
 
@@ -222,7 +224,7 @@ the comment states:
 So obviously they don't seem to care about making the language server easily
 usable by other people.
 
-Further more, the Q&A discussion mentioned earlier mentions a relevant issue:
+Furthermore, the Q&A discussion mentioned earlier mentions a relevant issue:
 
 > We do publish a nuget package (not to nuget.org though).
 > See [#71474 (comment)](https://github.com/dotnet/roslyn/issues/71474#issuecomment-2177303207)
@@ -296,14 +298,14 @@ original link pointed to, you'll be met with a
 *(Which is why you'd have to look through a lot of TypeScript code if you
 decided to not find the actual source they were pointing to)*.
 
-Instead if you have to look on the main branch specifically, then figure out
+Instead, if you have to look on the main branch specifically, then figure out
 which commit was the latest one before the comment was made *(assuming they
 didn't draft the comment beforehand and just took a while to reply),* and only
 then would you be able to figure out the exact parts that they were point to.
 
 Now of course permalinks *do* have the problem that the code they're point to
 could be outdated, but in my opinion making sure the relevant area of the code
-is pointed to will at at least be a better starting point than a broken link.
+is pointed to will at least be a better starting point than a broken link.
 
 And so clearly, the project itself isn't set up to be friendly to the other
 developers trying to use the language server, and neither are the developers
@@ -313,10 +315,10 @@ all)*.
 
 ## The debugger situation
 
-.NET is in an *"interesting"* situation in regards to the debugger, as mentioned
-earlier, the main debugger used in Visual Studio and the C# Dev Kit is vsdbg,
-which unlike most of the .NET ecosystem is close-sourced and proprietary, and
-it's
+.NET is in an *"interesting"* situation in regards to the debugger, as
+mentioned earlier, the main debugger used in Visual Studio and the C# Dev Kit is
+vsdbg, which unlike most of the .NET ecosystem is close-sourced and proprietary,
+and it's
 [license](https://visualstudio.microsoft.com/license-terms/mt644895/)
 only allows it to be used in the Microsoft versions of Visual Studio and Visual
 Studio Code:
@@ -344,7 +346,7 @@ edition, for a full list take a look at the
 
 Quite clearly, it makes sense to pay wall the features listed here, they're
 extra premiums that are not required for general development, but a debugger? A
-bog standard debugger. That's something pretty much every developer would
+bog-standard debugger. That's something pretty much every developer would
 consider a basic feature for development. *(Not counting the hubris of the
 young, self-declared geniuses that are certainly under the
 [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect))*.
@@ -371,7 +373,7 @@ certainly through their own debugger:
 Now I'm assuming that this debugger was still quite rudimentary, considering it
 was only made in ~8 days *(potentially more if they waited before making the
 first blog post)*, and they obviously would've worked hard to improve it from
-that point, however I do not have first hand experience of what it was like at
+that point, however I do not have first-hand experience of what it was like at
 the time *(I would be interested to hearing about it though if anyone has
 had experience with it)*.
 
