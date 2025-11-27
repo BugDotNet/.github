@@ -23,7 +23,7 @@ on:
         default: diagnostic
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
 
     env:
