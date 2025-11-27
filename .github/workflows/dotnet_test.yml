@@ -7,20 +7,20 @@ on:
   # Required for reusable workflows.
   workflow_call:
     inputs:
-      dotnet-version:
-        description: The .NET version to install.
+      source-directory:
+        description: The directory (to the solution or project) to build.
         type: string
-        default: '10'
+        default: src
+
+      global-json-path:
+        description: The path to the global.json file, this will determine the .NET version to install and use.
+        type: string
+        default: ${{ inputs.source-directory }}/global.json
 
       configuration:
         description: The configuration to run the build with.
         type: string
         required: true
-
-      source-directory:
-        description: The directory (to the solution or project) to build.
-        type: string
-        default: src
 
       machine-type:
         description: The type of the machine to run the workflow on.
@@ -45,7 +45,7 @@ jobs:
       - name: Setup the .NET development environment.
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ inputs.dotnet-version }}
+          global-json-file: ${{ inputs.global-json-path }}
           cache: true
           cache-dependency-path: "**/packages.lock.json"
 
