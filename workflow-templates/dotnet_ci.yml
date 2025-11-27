@@ -1,0 +1,32 @@
+name: .NET CI
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: '**'
+    paths:
+      - 'src/**'
+      - '.editorconfig'
+
+jobs:
+  build:
+    strategy: &strategy
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+
+    uses: BugDotNet/.github/.github/workflows/dotnet_build.yml@main
+    with:
+      configuration: ${{ matrix.configuration }}
+
+  test:
+    strategy: *strategy
+
+    uses: BugDotNet/.github/.github/workflows/dotnet_test.yml@main
+    with:
+      configuration: ${{ matrix.configuration }}
+
+  lint:
+    uses: BugDotNet/.github/.github/workflows/dotnet_lint.yml@main

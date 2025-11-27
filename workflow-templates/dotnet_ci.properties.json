@@ -1,0 +1,9 @@
+{
+	"name": ".NET CI",
+	"description": "CI runs for a .NET repository.",
+	"iconName": "octicon breaker",
+	"categories": [
+		"continuous-integration", "testing", "code-quality", "code-review",
+		"C#", "DotNetConsole", "DotNetWorker"
+	]
+}

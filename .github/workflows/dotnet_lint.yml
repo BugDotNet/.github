@@ -1,0 +1,53 @@
+name: .NET Lint
+
+permissions:
+  contents: read
+
+on:
+  # Required for reusable workflows.
+  workflow_call:
+    inputs:
+      dotnet-version:
+        description: The .NET version to install.
+        type: string
+        default: '9'
+
+      source-directory:
+        description: The directory (to the solution or project) to build.
+        type: string
+        default: src
+
+      verbosity:
+        description: The output verbosity of the linter.
+        type: string
+        default: diagnostic
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+
+    steps:
+      - name: Checkout the repository.
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: ${{ inputs.source-directory }}
+
+      - name: Setup the .NET development environment.
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+          cache: true
+          cache-dependency-path: "**/packages.lock.json"
+
+      - name: Restore the project dependencies.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet restore --locked-mode
+
+      - name: Run the linter.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet format --no-restore --verify-no-changes --verbosity ${{ inputs.verbosity }}
