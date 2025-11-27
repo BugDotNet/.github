@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    strategy: &strategy
+    strategy:
       fail-fast: false
       matrix:
         configuration: [Debug, Release]
@@ -22,7 +22,10 @@ jobs:
       configuration: ${{ matrix.configuration }}
 
   test:
-    strategy: *strategy
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
 
     uses: BugDotNet/.github/.github/workflows/dotnet_test.yml@main
     with:
