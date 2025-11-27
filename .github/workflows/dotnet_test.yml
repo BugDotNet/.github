@@ -10,7 +10,7 @@ on:
       dotnet-version:
         description: The .NET version to install.
         type: string
-        default: '9'
+        default: '10'
 
       configuration:
         description: The configuration to run the build with.

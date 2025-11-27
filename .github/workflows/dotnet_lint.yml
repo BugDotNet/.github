@@ -10,7 +10,7 @@ on:
       dotnet-version:
         description: The .NET version to install.
         type: string
-        default: '9'
+        default: '10'
 
       source-directory:
         description: The directory (to the solution or project) to build.
