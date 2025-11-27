@@ -15,7 +15,7 @@ on:
       global-json-path:
         description: The path to the global.json file, this will determine the .NET version to install and use.
         type: string
-        default: ${{ inputs.source-directory }}/global.json
+        default: src/global.json
 
       verbosity:
         description: The output verbosity of the linter.
