@@ -1,0 +1,42 @@
+name: Research task
+description: A template for adding a new research task. THIS TEMPLATE IS FOR MAINTAINERS ONLY.
+title: "[Research]: "
+
+projects: ["BugDotNet/3"]
+type: "Research"
+
+
+body:
+  - type: markdown
+    attributes:
+      value: "**This template is for the maintainers to use, it should not be used by the general public.**"
+
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: Read and agreed to follow our Code of Conduct?
+      description: |
+        Have you read our [Code of Conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md) and do you agree to follow it?
+      options:
+        - label: I have read the Code of Conduct and I agree to follow it.
+          required: true
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Research task
+      description: "What task should be researched."
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevant-links
+    attributes:
+      label: Relevant links
+      description: "Any relevant links, or starting points for the research."
+
+
+  - type: markdown
+    attributes:
+      value: "**Remember to add the specific project this research task belongs to.**"
