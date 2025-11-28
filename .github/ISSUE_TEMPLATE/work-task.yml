@@ -1,0 +1,36 @@
+name: Work task
+description: A template for adding a new Work task. THIS TEMPLATE IS FOR MAINTAINERS ONLY.
+title: "[Work]: "
+
+projects: ["BugDotNet/3"]
+type: "Work"
+
+
+body:
+  - type: markdown
+    attributes:
+      value: "**This template is for the maintainers to use, it should not be used by the general public.**"
+
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: Read and agreed to follow our Code of Conduct?
+      description: |
+        Have you read our [Code of Conduct](https://github.com/BugDotNet/.github/blob/main/.github/code_of_conduct.md) and do you agree to follow it?
+      options:
+        - label: I have read the Code of Conduct and I agree to follow it.
+          required: true
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task
+      description: "What task needs to be done."
+    validations:
+      required: true
+
+
+  - type: markdown
+    attributes:
+      value: "**Remember to add the specific project this task belongs to.**"
