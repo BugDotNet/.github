@@ -33,3 +33,6 @@ jobs:
 
   lint:
     uses: BugDotNet/.github/.github/workflows/dotnet_ci_lint.yml@main
+
+  pack:
+    uses: BugDotNet/.github/.github/workflows/dotnet_ci_pack.yml@main

@@ -1,0 +1,95 @@
+name: .NET CI Pack
+
+permissions:
+  contents: read
+
+on:
+  # Required for reusable workflows.
+  workflow_call:
+    inputs:
+      source-directory:
+        description: The directory (to the solution or project) to build.
+        type: string
+        default: src
+
+      global-json-path:
+        description: The path to the global.json file, this will determine the .NET version to install and use.
+        type: string
+        default: src/global.json
+
+      configuration:
+        description: The configuration to run the build with.
+        type: string
+        default: Release
+
+      machine-type:
+        description: The type of the machine to run the workflow on.
+        type: string
+        default: ubuntu-latest
+
+      upload-artifact:
+        description: Whether the created NuGet packages should be uploaded as an artifact.
+        type: boolean
+        default: true
+
+      artifact-name:
+        description: The name of the artifact to uploadt he NuGet packages to.
+        type: string
+        default: nuget-packages
+
+      retention-days:
+        description: The amount of days that the uploaded workflow artifacts should be rained for.
+        type: number
+        default: 7
+
+    outputs:
+      artifact-id:
+        description: The id of the created NuGet package artifact.
+        value: ${{ jobs.pack.outputs.artifact-id }}
+
+jobs:
+  pack:
+    runs-on: ${{ inputs.machine-type }}
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+
+    outputs:
+      artifact-id: ${{ steps.artifact.outputs.artifact-id }}
+
+    steps:
+      - name: Checkout the repository.
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: ${{ inputs.source-directory }}
+
+      - name: Setup the .NET development environment.
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: ${{ inputs.global-json-path }}
+          cache: true
+          cache-dependency-path: "**/packages.lock.json"
+
+      - name: Restore the project dependencies.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet restore --locked-mode
+
+      - name: Build the source directory.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet build --no-restore --configuration ${{ inputs.configuration }}
+
+      - name: Pack the source directory.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet pack --no-build --warnaserror --configuration ${{ inputs.configuration }} --output "${{ runner.temp }}/package_output"
+
+      - name: Upload the NuGet packages as an artifact.
+        if: ${{ inputs.upload-artifact }}
+        id: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: "${{ runner.temp }}/package_output"
+          if-no-files-found: warn
+          retention-days: ${{ inputs.retention-days }}
