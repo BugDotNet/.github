@@ -17,7 +17,7 @@ jobs:
       matrix:
         configuration: [Debug, Release]
 
-    uses: BugDotNet/.github/.github/workflows/dotnet_build.yml@main
+    uses: BugDotNet/.github/.github/workflows/dotnet_ci_build.yml@main
     with:
       configuration: ${{ matrix.configuration }}
 
@@ -27,9 +27,9 @@ jobs:
       matrix:
         configuration: [Debug, Release]
 
-    uses: BugDotNet/.github/.github/workflows/dotnet_test.yml@main
+    uses: BugDotNet/.github/.github/workflows/dotnet_ci_test.yml@main
     with:
       configuration: ${{ matrix.configuration }}
 
   lint:
-    uses: BugDotNet/.github/.github/workflows/dotnet_lint.yml@main
+    uses: BugDotNet/.github/.github/workflows/dotnet_ci_lint.yml@main

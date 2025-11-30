@@ -1,4 +1,4 @@
-name: .NET Lint
+name: .NET CI Build
 
 permissions:
   contents: read
@@ -17,14 +17,19 @@ on:
         type: string
         default: src/global.json
 
-      verbosity:
-        description: The output verbosity of the linter.
+      configuration:
+        description: The configuration to run the build with.
         type: string
-        default: diagnostic
+        required: true
+
+      machine-type:
+        description: The type of the machine to run the workflow on.
+        type: string
+        default: ubuntu-latest
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ inputs.machine-type }}
 
     env:
       DOTNET_NOLOGO: true
@@ -48,6 +53,6 @@ jobs:
         working-directory: ${{ inputs.source-directory }}
         run: dotnet restore --locked-mode
 
-      - name: Run the linter.
+      - name: Build the source directory.
         working-directory: ${{ inputs.source-directory }}
-        run: dotnet format --no-restore --verify-no-changes --verbosity ${{ inputs.verbosity }}
+        run: dotnet build --no-restore --warnaserror --configuration ${{ inputs.configuration }}

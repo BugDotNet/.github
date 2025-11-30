@@ -1,4 +1,4 @@
-name: .NET Build
+name: .NET CI Test
 
 permissions:
   contents: read
@@ -28,7 +28,7 @@ on:
         default: ubuntu-latest
 
 jobs:
-  build:
+  test:
     runs-on: ${{ inputs.machine-type }}
 
     env:
@@ -55,4 +55,8 @@ jobs:
 
       - name: Build the source directory.
         working-directory: ${{ inputs.source-directory }}
-        run: dotnet build --no-restore --warnaserror --configuration ${{ inputs.configuration }}
+        run: dotnet build --no-restore --configuration ${{ inputs.configuration }}
+
+      - name: Run the tests.
+        working-directory: ${{ inputs.source-directory }}
+        run: dotnet test --no-build --configuration ${{ inputs.configuration }} --warnaserror

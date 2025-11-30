@@ -1,4 +1,4 @@
-name: .NET Test
+name: .NET CI Lint
 
 permissions:
   contents: read
@@ -17,19 +17,14 @@ on:
         type: string
         default: src/global.json
 
-      configuration:
-        description: The configuration to run the build with.
+      verbosity:
+        description: The output verbosity of the linter.
         type: string
-        required: true
-
-      machine-type:
-        description: The type of the machine to run the workflow on.
-        type: string
-        default: ubuntu-latest
+        default: diagnostic
 
 jobs:
-  test:
-    runs-on: ${{ inputs.machine-type }}
+  lint:
+    runs-on: ubuntu-latest
 
     env:
       DOTNET_NOLOGO: true
@@ -53,10 +48,6 @@ jobs:
         working-directory: ${{ inputs.source-directory }}
         run: dotnet restore --locked-mode
 
-      - name: Build the source directory.
+      - name: Run the linter.
         working-directory: ${{ inputs.source-directory }}
-        run: dotnet build --no-restore --configuration ${{ inputs.configuration }}
-
-      - name: Run the tests.
-        working-directory: ${{ inputs.source-directory }}
-        run: dotnet test --no-build --configuration ${{ inputs.configuration }} --warnaserror
+        run: dotnet format --no-restore --verify-no-changes --verbosity ${{ inputs.verbosity }}
