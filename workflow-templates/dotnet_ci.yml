@@ -36,3 +36,6 @@ jobs:
 
   pack:
     uses: BugDotNet/.github/.github/workflows/dotnet_ci_pack.yml@main
+
+  aot:
+    uses: BugDotNet/.github/.github/workflows/dotnet_ci_aot.yml@main

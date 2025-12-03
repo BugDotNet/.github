@@ -1,0 +1,73 @@
+name: .NET CI AOT
+
+permissions:
+  contents: read
+
+on:
+  # Required for reusable workflows.
+  workflow_call:
+    inputs:
+      source-directory:
+        description: The directory (to the solution or project) to build.
+        type: string
+        default: src
+
+      project-name:
+        description: The name of the AOT test project.
+        type: string
+        default: AotCompatability.TestApp
+
+      project-directory:
+        description: The directory to the AOT test project.
+        type: string
+        default: src/AotCompatability.TestApp
+
+      global-json-path:
+        description: The path to the global.json file, this will determine the .NET version to install and use.
+        type: string
+        default: src/global.json
+
+      machine-type:
+        description: The type of the machine to run the workflow on.
+        type: string
+        default: ubuntu-latest
+
+      target-runtime:
+        description: The runtime identifier to target.
+        type: string
+        default: linux-x64
+
+jobs:
+  aot:
+    runs-on: ${{ inputs.machine-type }}
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+
+    steps:
+      - name: Checkout the repository.
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: ${{ inputs.source-directory }}
+
+      - name: Setup the .NET development environment.
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: ${{ inputs.global-json-path }}
+
+      - name: Restore the AOT project dependencies.
+        working-directory: ${{ inputs.project-directory }}
+        run: dotnet restore --runtime ${{ inputs.target-runtime }}
+
+      - name: Build the AOT project directory.
+        working-directory: ${{ inputs.project-directory }}
+        run: dotnet build --no-restore --configuration Release --runtime ${{ inputs.target-runtime }}
+
+      - name: Publish the AOT project.
+        working-directory: ${{ inputs.project-directory }}
+        run: dotnet publish --no-build --configuration Release --runtime ${{ inputs.target-runtime }} --output "${{ runner.temp }}/aot_output"
+
+      - name: Run the published AOT project.
+        run: "${{ runner.temp }}/aot_output/${{ inputs.project-name }}"
