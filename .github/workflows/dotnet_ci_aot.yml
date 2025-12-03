@@ -67,7 +67,9 @@ jobs:
 
       - name: Publish the AOT project.
         working-directory: ${{ inputs.project-directory }}
-        run: dotnet publish --no-build --configuration Release --runtime ${{ inputs.target-runtime }} --output "${{ runner.temp }}/aot_output"
+        # Current step is a workaround for https://github.com/dotnet/sdk/issues/51766, restore to --no-build version once fixed.
+        # run: dotnet publish --no-build --configuration Release --runtime linux-x64 --output "${{ runner.temp }}/aot_output"
+        run: dotnet publish --configuration Release --runtime linux-x64 --output "${{ runner.temp }}/aot_output"
 
       - name: Run the published AOT project.
         run: "${{ runner.temp }}/aot_output/${{ inputs.project-name }}"
