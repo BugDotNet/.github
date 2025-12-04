@@ -63,7 +63,7 @@ jobs:
 
       - name: Build the AOT project directory.
         working-directory: ${{ inputs.project-directory }}
-        run: dotnet build --no-restore --configuration Release --runtime ${{ inputs.target-runtime }}
+        run: dotnet build --no-restore --configuration Release --runtime ${{ inputs.target-runtime }} /p:ContinuousIntegrationBuild=true
 
       - name: Publish the AOT project.
         working-directory: ${{ inputs.project-directory }}

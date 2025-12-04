@@ -78,7 +78,7 @@ jobs:
 
       - name: Build the source directory.
         working-directory: ${{ inputs.source-directory }}
-        run: dotnet build --no-restore --configuration ${{ inputs.configuration }}
+        run: dotnet build --no-restore --configuration ${{ inputs.configuration }} /p:ContinuousIntegrationBuild=true
 
       - name: Pack the source directory.
         working-directory: ${{ inputs.source-directory }}
